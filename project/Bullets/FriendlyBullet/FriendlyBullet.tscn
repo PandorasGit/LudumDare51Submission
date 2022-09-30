@@ -8,7 +8,10 @@ height = 4.0
 
 [node name="FriendlyBullet" type="KinematicBody2D"]
 scale = Vector2( 5, 5 )
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 1 )
+_direction_fired = Vector2( 0, -1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

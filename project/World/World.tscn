@@ -13,5 +13,4 @@ position = Vector2( 512, 500 )
 position = Vector2( 361, 286 )
 
 [node name="FriendlyBullet" parent="." instance=ExtResource( 3 )]
-position = Vector2( 682, 361 )
-_direction_fired = Vector2( 0, -1 )
+position = Vector2( 511, 571 )
