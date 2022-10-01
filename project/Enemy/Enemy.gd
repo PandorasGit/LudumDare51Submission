@@ -7,7 +7,7 @@ signal fired(id, fired_from)
 var _has_fired := false
 
 
-
+onready var _collider := find_node("Collider")
 onready var _reload_timer := find_node("ReloadTimer")
 onready var despawn_timer := find_node("DespawnTimer")
 onready var _death_tween := find_node("DeathTween")
@@ -20,9 +20,9 @@ func _ready() -> void:
 	# warning-ignore:return_value_discarded
 	_reload_timer.connect("timeout", self, "_on_reload_timer_timeout")
 	# warning-ignore:return_value_discarded
-	despawn_timer.connect("timeout", self, "on_despawn_timer_timeout")
+	despawn_timer.connect("timeout", self, "_on_despawn_timer_timeout")
 	# warning-ignore:return_value_discarded
-	_death_timer.connect("timeout", self, "on_death_timer_timeout")
+	_death_timer.connect("timeout", self, "_on_death_timer_timeout")
 
 
 func _physics_process(_delta) -> void:
@@ -41,17 +41,17 @@ func _on_reload_timer_timeout() -> void:
 	_has_fired = false
 
 
-func on_despawn_timer_timeout() -> void:
+func _on_despawn_timer_timeout() -> void:
 	queue_free()
 
 
-func on_death_timer_timeout() -> void:
+func _on_death_timer_timeout() -> void:
 	queue_free()
 
 
 
 func _die() -> void:
-	remove_from_group("target")
+	_collider.disabled = true
 	_death_tween.interpolate_property(_sprite, "modulate",
 		Color("ffffff"), Color("000000"), 0.1,
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
@@ -61,4 +61,3 @@ func _die() -> void:
 	_death_particles.emitting = true
 	_death_tween.start()
 	_death_timer.start()
-	
