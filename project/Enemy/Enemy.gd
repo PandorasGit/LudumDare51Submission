@@ -9,11 +9,14 @@ var _has_fired := false
 
 
 onready var _reload_timer := find_node("ReloadTimer")
+onready var despawn_timer := find_node("DespawnTimer")
 
 
 func _ready() -> void:
-# warning-ignore:return_value_discarded
+	# warning-ignore:return_value_discarded
 	_reload_timer.connect("timeout", self, "_on_reload_timer_timeout")
+# warning-ignore:return_value_discarded
+	despawn_timer.connect("timeout", self, "on_despawn_timer_timeout")
 
 
 func _physics_process(_delta) -> void:
@@ -30,3 +33,7 @@ func _on_killed(_name: String) -> void:
 
 func _on_reload_timer_timeout() -> void:
 	_has_fired = false
+
+
+func on_despawn_timer_timeout() -> void:
+	queue_free()

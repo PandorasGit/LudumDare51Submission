@@ -3,6 +3,10 @@ extends Node2D
 
 signal player_killed
 signal enemy_killed(name)
+signal score_updated(new_score)
+
+
+var _score := 0
 
 
 onready var _default_bullet := load("res://Bullets/Bullet.tscn")
@@ -31,3 +35,5 @@ func _on_default_bullet_killed(_name: String) -> void:
 
 func _on_friendly_bullet_killed(_name: String) -> void:
 	emit_signal("enemy_killed", _name)
+	_score += 1
+	emit_signal("score_updated", _score)
