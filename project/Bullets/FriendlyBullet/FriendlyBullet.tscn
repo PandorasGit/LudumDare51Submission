@@ -17,3 +17,6 @@ _direction_fired = Vector2( 0, -1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 10.0

@@ -12,6 +12,7 @@
 
 - [X] Movement
 - [X] Shooting a bullet
+- [X] Bullets Despawn *Ironically after 10 seconds*
 - [ ] Enemy Bullets Kill the player
 - [ ] Enemys that spawn and shoot the player
 - [ ] Score

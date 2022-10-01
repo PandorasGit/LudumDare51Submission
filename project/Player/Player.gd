@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-signal bullet_fired(id, fired_from)
+signal fired(id, fired_from)
 
 
 var _velocity := Vector2.ZERO
@@ -23,7 +23,7 @@ func _physics_process(_delta: float) -> void:
 	_velocity = move_and_slide(Vector2(x_movement, 0) * _speed, Vector2.UP)
 	
 	if Input.is_action_just_pressed("shoot") and not _has_fired:
-		emit_signal("bullet_fired", _bullet_id, self)
+		emit_signal("fired", _bullet_id, self)
 		_has_fired = true
 		_reload_timer.start()
 
@@ -32,5 +32,9 @@ func _get_x_input() -> float:
 	return Input.get_axis("move_left", "move_right")
 
 
-func _on_reload_timer_timeout():
+func _on_reload_timer_timeout() -> void:
 	_has_fired = false
+
+
+func die():
+	queue_free()
