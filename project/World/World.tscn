@@ -1,21 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Bullets/Bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Bullets/FriendlyBullet/FriendlyBullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/World.gd" type="Script" id=4]
 [ext_resource path="res://BulletSpawner/BulletSpawner.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 500 )
-
 [node name="Bullet" parent="." instance=ExtResource( 2 )]
 position = Vector2( 361, 286 )
 
-[node name="FriendlyBullet" parent="." instance=ExtResource( 3 )]
-position = Vector2( 511, 571 )
-
 [node name="BulletSpawner" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 500 )
