@@ -10,6 +10,7 @@ onready var _hud := find_node("HUD")
 
 func _ready() -> void:
 	_hud.bullet_spawner = _bullet_spawner
+	_hud.player = _player
 	_bullet_spawner.player = _player
 	# warning-ignore:return_value_discarded
 	_player.connect("fired", self, "_on_fired")

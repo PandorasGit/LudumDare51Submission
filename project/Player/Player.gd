@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 
 signal fired(id, fired_from)
+signal super_state_changed(new_state)
 
 
 var _velocity := Vector2.ZERO
@@ -17,8 +18,10 @@ onready var _super_timer := find_node("SuperTimer")
 
 
 func _ready() -> void:
-# warning-ignore:return_value_discarded
+	# warning-ignore:return_value_discarded
 	_reload_timer.connect("timeout", self, "_on_reload_timer_timeout")
+	# warning-ignore:return_value_discarded
+	_super_timer.connect("timeout", self, "_on_super_timer_timeout")
 
 
 func _physics_process(_delta: float) -> void:
@@ -44,6 +47,7 @@ func _shoot_normal() -> void:
 func _shoot_super():
 	emit_signal("fired", _super_bullet_id, position)
 	_has_supered = true
+	emit_signal("super_state_changed", false)
 	_super_timer.start()
 
 
@@ -53,6 +57,11 @@ func _get_x_input() -> float:
 
 func _on_reload_timer_timeout() -> void:
 	_has_fired = false
+
+
+func _on_super_timer_timeout() -> void:
+	_has_supered = false
+	emit_signal("super_state_changed", true)
 
 
 func _on_killed() -> void:
