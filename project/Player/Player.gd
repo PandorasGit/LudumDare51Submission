@@ -5,7 +5,7 @@ signal fired(id, fired_from)
 
 
 var _velocity := Vector2.ZERO
-var _speed := 500
+var _speed := 1000
 var _bullet_id := 1
 var _has_fired := false
 
