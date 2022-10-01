@@ -20,7 +20,7 @@ onready var _death_tween := find_node("DeathTween")
 onready var _sprite := find_node("Sprite")
 onready var _death_particles := find_node("DeathParticles")
 onready var _death_timer := find_node("DeathAnimationTimer")
-
+onready var _death_sound := find_node("DeathSound")
 
 func _ready() -> void:
 	# warning-ignore:return_value_discarded
@@ -81,6 +81,7 @@ func _on_death_timer_timeout() -> void:
 	queue_free()
 
 func _die() -> void:
+	_death_sound.play()
 	_collider.disabled = true
 	_death_tween.interpolate_property(_sprite, "modulate",
 		Color("ffffff"), Color("000000"), 1,

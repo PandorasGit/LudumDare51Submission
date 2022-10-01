@@ -1,7 +1,7 @@
 
 # Ludum Dare Game
 - My Jam Game for Ludum Dare 51
-- Made using Godot 3.5.1, and Paint.net
+- Made using Godot 3.5.1, Sfxr, and Paint.net
 - Play the latest build [here](https://wendallr.github.io/LudumDare51Submission/)
 
 ## Features and Controls
@@ -27,9 +27,9 @@
 - [X] Finished game Title, Gameplay, and End screen
 - [X] Ability to Return to the Title after the End
 - [X] Juice as a decorated back grounds
-- [ ] Juice as in player death effect
+- [X] Juice as in player death effect
 - [X] Juice as in enemy death effect
 - [ ] Juice as a font for HUD and title screen
-- [ ] Sound effects
+- [X] Sound effects
 - [ ] Music
-- [ ] Juice as particle effects
+- [X] Juice as particle effects

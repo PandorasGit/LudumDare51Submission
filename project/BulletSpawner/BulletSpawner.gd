@@ -13,7 +13,7 @@ var _score := 0
 onready var _default_bullet := load("res://Bullets/Bullet.tscn")
 onready var _friendly_bullet := load("res://Bullets/FriendlyBullet/FriendlyBullet.tscn")
 onready var _super_bullet := load("res://Bullets/SuperBullet/SuperBullet.tscn")
-
+onready var _shoot_sound := find_node("ShootSound")
 
 func _set_player(value: KinematicBody2D) -> void:
 	player = value
@@ -23,6 +23,7 @@ func _set_player(value: KinematicBody2D) -> void:
 
 # The Z component is Used to store the id of the bullet
 func spawn_bullet(fired_from: Vector3) -> void:
+	
 	if fired_from.z == 2:
 		var new_position = Vector2(fired_from.x, fired_from.y)
 		var new_bullet = _make_new_bullet(_super_bullet.instance(), new_position)
@@ -41,6 +42,7 @@ func spawn_bullet(fired_from: Vector3) -> void:
 
 #The Vector2 is passed from the X and y components of the Vector3 used in the spawn bullet function
 func _make_new_bullet(new_bullet: Bullet, fired_from: Vector2) -> Bullet:
+	_shoot_sound.play()
 	add_child(new_bullet)
 	new_bullet.position = fired_from
 	new_bullet.startTimer()
