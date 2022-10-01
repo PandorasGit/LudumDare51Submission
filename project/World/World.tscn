@@ -25,17 +25,17 @@ anchor_bottom = 0.0
 margin_right = 1028.0
 margin_bottom = 600.0
 
-[node name="Player Boundaries" type="Node2D" parent="."]
+[node name="PlayerBoundaries" type="Node2D" parent="."]
 position = Vector2( 512, 6 )
 
-[node name="BoundaryLeft" type="StaticBody2D" parent="Player Boundaries"]
+[node name="BoundaryLeft" type="StaticBody2D" parent="PlayerBoundaries"]
 position = Vector2( -522, 550 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Boundaries/BoundaryLeft"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/BoundaryLeft"]
 shape = SubResource( 1 )
 
-[node name="BoundaryRight" type="StaticBody2D" parent="Player Boundaries"]
+[node name="BoundaryRight" type="StaticBody2D" parent="PlayerBoundaries"]
 position = Vector2( 523, 550 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Boundaries/BoundaryRight"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/BoundaryRight"]
 shape = SubResource( 1 )

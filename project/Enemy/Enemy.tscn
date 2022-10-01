@@ -59,4 +59,4 @@ anims/EnemyPathing = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
 [node name="DespawnTimer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 11.0
