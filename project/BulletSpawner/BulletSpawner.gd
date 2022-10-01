@@ -6,11 +6,18 @@ signal enemy_killed(name)
 signal score_updated(new_score)
 
 
+var player setget _set_player
 var _score := 0
 
 
 onready var _default_bullet := load("res://Bullets/Bullet.tscn")
 onready var _friendly_bullet := load("res://Bullets/FriendlyBullet/FriendlyBullet.tscn")
+
+
+func _set_player(value: KinematicBody2D) -> void:
+	player = value
+	# warning-ignore:return_value_discarded
+	connect("player_killed", player, "_on_killed")
 
 
 # The Z component is Used to store the id of the bullet
