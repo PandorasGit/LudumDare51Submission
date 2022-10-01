@@ -13,7 +13,7 @@ var _has_fired := false
 onready var _reload_timer := find_node("ReloadTimer")
 
 
-func _ready():
+func _ready() -> void:
 # warning-ignore:return_value_discarded
 	_reload_timer.connect("timeout", self, "_on_reload_timer_timeout")
 
@@ -36,5 +36,5 @@ func _on_reload_timer_timeout() -> void:
 	_has_fired = false
 
 
-func _on_killed():
+func _on_killed() -> void:
 	queue_free()

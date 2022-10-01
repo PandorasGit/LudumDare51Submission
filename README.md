@@ -13,8 +13,10 @@
 - [X] Movement
 - [X] Shooting a bullet
 - [X] Bullets Despawn *Ironically after 10 seconds*
-- [ ] Enemy Bullets Kill the player
-- [ ] Enemys that spawn and shoot the player
+- [X] Enemy Bullets Kill the player
+- [X] Enemy's that die from player bullets
+- [X] Enemy's that shoot the player
+- [ ] Enemys that spawn
 - [ ] Score
 - [ ] Basic Hud
 - [ ] Super Attacks

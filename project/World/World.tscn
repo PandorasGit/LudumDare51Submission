@@ -8,10 +8,10 @@
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 502, 405 )
-
 [node name="BulletSpawner" parent="." instance=ExtResource( 5 )]
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 531, 157 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 500 )

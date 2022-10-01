@@ -14,6 +14,7 @@ func _ready() -> void:
 	
 # warning-ignore:return_value_discarded
 	_bullet_spawner.connect("enemy_killed", _enemy, "_on_killed")
+	_enemy.connect("fired", self, "_on_fired")
 
 
 func _on_fired(id: int, fired_from: KinematicBody2D) -> void:
