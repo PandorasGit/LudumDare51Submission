@@ -8,7 +8,7 @@ onready var _respawn_timer := find_node("RespawnTimer")
 onready var _enemy := load("res://Enemy/Enemy.tscn")
 
 
-func _ready():
+func _ready() -> void:
 # warning-ignore:return_value_discarded
 	_respawn_timer.connect("timeout", self, "_on_RespawnTimer_timeout")
 	_respawn_timer.start()

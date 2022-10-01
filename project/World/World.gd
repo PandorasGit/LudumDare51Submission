@@ -19,17 +19,17 @@ func _ready() -> void:
 	_hud.connect("restart", self, "_on_restart")
 
 
-func _on_fired(id: int, fired_from: KinematicBody2D) -> void:
-	var spawn_location := fired_from.position
-	_bullet_spawner.spawn_bullet(Vector3(spawn_location.x, spawn_location.y, id))
+
+func _on_fired(id: int, fired_from: Vector2) -> void:
+	_bullet_spawner.spawn_bullet(Vector3(fired_from.x, fired_from.y, id))
 
 
-func _on_spawned(enemy):
+func _on_spawned(enemy) -> void:
 	# warning-ignore:return_value_discarded
 	_bullet_spawner.connect("enemy_killed", enemy, "_on_killed")
 	enemy.connect("fired", self, "_on_fired")
 
 
-func _on_restart():
+func _on_restart() -> void:
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene_to(_main_menu)
