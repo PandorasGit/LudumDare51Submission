@@ -18,3 +18,15 @@ margin_right = 1024.0
 margin_bottom = 14.0
 text = "Score: 0"
 align = 1
+
+[node name="RestartButton" type="Button" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 375.0
+margin_top = 303.0
+margin_right = -385.0
+margin_bottom = -261.0
+text = "Return to Main Menu"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]

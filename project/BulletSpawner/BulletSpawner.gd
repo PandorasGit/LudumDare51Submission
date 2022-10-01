@@ -20,20 +20,20 @@ func spawn_bullet(fired_from: Vector3) -> void:
 		add_child(friendly_bullet)
 		friendly_bullet.position = Vector2(fired_from.x, fired_from.y)
 		friendly_bullet.startTimer()
-		friendly_bullet.connect("killed", self, "_on_friendly_bullet_killed")
+		friendly_bullet.connect("collided", self, "_on_friendly_bullet_collided")
 		
 	else:
 		var default_bullet = _default_bullet.instance()
 		add_child(default_bullet)
 		default_bullet.position = Vector2(fired_from.x, fired_from.y)
-		default_bullet.connect("killed", self, "_on_default_bullet_killed")
+		default_bullet.connect("collided", self, "_on_default_bullet_collided")
 
 
-func _on_default_bullet_killed(_name: String) -> void:
+func _on_default_bullet_collided(_name: String) -> void:
 	emit_signal("player_killed")
 
 
-func _on_friendly_bullet_killed(_name: String) -> void:
+func _on_friendly_bullet_collided(_name: String) -> void:
 	emit_signal("enemy_killed", _name)
 	_score += 1
 	emit_signal("score_updated", _score)

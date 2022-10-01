@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Title" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 459.0
+margin_top = 113.0
+margin_right = -494.0
+margin_bottom = -473.0
+text = "TEMP TITLE"
+
+[node name="StartButton" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 436.0
+margin_top = 234.0
+margin_right = -462.0
+margin_bottom = -346.0
+text = "Start Game"
