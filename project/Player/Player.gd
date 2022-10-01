@@ -36,5 +36,5 @@ func _on_reload_timer_timeout() -> void:
 	_has_fired = false
 
 
-func die():
+func _on_killed():
 	queue_free()

@@ -2,7 +2,7 @@
 # Ludum Dare Game
 - My Jam Game for Ludum Dare 51
 - Made using Godot 3.5.1, and Paint.net
-- Play the latest build [here]()
+- Play the latest build [here](https://wendallr.github.io/LudumDare51Submission/)
 
 ## Features and Controls
 - A and D to move left and right
