@@ -22,8 +22,9 @@ func _physics_process(_delta) -> void:
 		emit_signal("fired", 0, self)
 
 
-func _on_killed() -> void:
-	queue_free()
+func _on_killed(_name: String) -> void:
+	if _name == name:
+		queue_free()
 
 
 func _on_reload_timer_timeout() -> void:

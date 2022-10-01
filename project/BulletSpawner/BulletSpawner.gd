@@ -2,7 +2,7 @@ extends Node2D
 
 
 signal player_killed
-signal enemy_killed
+signal enemy_killed(name)
 
 
 onready var _default_bullet := load("res://Bullets/Bullet.tscn")
@@ -25,9 +25,9 @@ func spawn_bullet(fired_from: Vector3) -> void:
 		default_bullet.connect("killed", self, "_on_default_bullet_killed")
 
 
-func _on_default_bullet_killed() -> void:
+func _on_default_bullet_killed(_name: String) -> void:
 	emit_signal("player_killed")
 
 
-func _on_friendly_bullet_killed() -> void:
-	emit_signal("enemy_killed")
+func _on_friendly_bullet_killed(_name: String) -> void:
+	emit_signal("enemy_killed", _name)

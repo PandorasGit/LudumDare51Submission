@@ -2,7 +2,7 @@ class_name Bullet
 extends KinematicBody2D
 
 
-signal killed
+signal killed(_name)
 
 
 export var _direction_fired: = Vector2.DOWN
@@ -32,7 +32,7 @@ func _physics_process(_delta: float) -> void:
 	for i in get_slide_count():
 		var collision := get_slide_collision(i)
 		if collision.collider.is_in_group("target"):
-			emit_signal("killed")
+			emit_signal("killed", collision.collider.name)
 
 
 func on_despawn_timer_timeout() -> void:
