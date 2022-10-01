@@ -13,4 +13,4 @@ script = ExtResource( 4 )
 [node name="BulletSpawner" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 500 )
+position = Vector2( 512, 550 )

@@ -21,5 +21,5 @@ func _on_RespawnTimer_timeout() -> void:
 func _spawn_enemy() -> void:
 	var new_enemy = _enemy.instance()
 	add_child(new_enemy)
-	new_enemy.position = Vector2(rand_range(100, 500), 10)
+	new_enemy.position = Vector2(-10, -10)
 	emit_signal("spawned", new_enemy)

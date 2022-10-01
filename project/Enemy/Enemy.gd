@@ -7,6 +7,7 @@ signal fired(id, fired_from)
 var _has_fired := false
 
 
+
 onready var _reload_timer := find_node("ReloadTimer")
 
 
@@ -18,7 +19,7 @@ func _ready() -> void:
 func _physics_process(_delta) -> void:
 	if not _has_fired:
 		_has_fired = true
-		_reload_timer.start()
+		_reload_timer.start(rand_range(0.6, 3))
 		emit_signal("fired", 0, self)
 
 

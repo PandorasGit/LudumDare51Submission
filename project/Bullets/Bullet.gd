@@ -6,7 +6,7 @@ signal killed(_name)
 
 
 export var _direction_fired: = Vector2.DOWN
-export var _speed := 100
+export var _speed := 1000
 export var _color:= Color("ffffff")
 
 
@@ -33,6 +33,7 @@ func _physics_process(_delta: float) -> void:
 		var collision := get_slide_collision(i)
 		if collision.collider.is_in_group("target"):
 			emit_signal("killed", collision.collider.name)
+			queue_free()
 
 
 func on_despawn_timer_timeout() -> void:
