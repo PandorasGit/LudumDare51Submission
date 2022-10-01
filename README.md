@@ -7,6 +7,7 @@
 ## Features and Controls
 - A and D to move left and right
 - Space to fire
+- A super attack can be fired every 10 seconds using the same button
 - Enemies will exist on screen for a total of ten seconds. Every Ten Seconds, they one will have had the chance to complete its animation cycle.
 
 # Goals For the Jam
@@ -25,7 +26,9 @@
 - [X] Super Attack recharges every 10 seconds **Required for the Compo Theme**
 - [X] Finished game Title, Gameplay, and End screen
 - [X] Ability to Return to the Title after the End
-- [ ] Juice as a decorated back grounds
+- [X] Juice as a decorated back grounds
+- [ ] Juice as in player death effect
+- [X] Juice as in enemy death effect
 - [ ] Juice as a font for HUD and title screen
 - [ ] Sound effects
 - [ ] Music

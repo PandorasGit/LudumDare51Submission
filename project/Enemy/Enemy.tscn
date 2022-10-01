@@ -4,7 +4,7 @@
 [ext_resource path="res://Enemy/Enemy.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 6 )
+extents = Vector2( 29.5, 29.5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "EnemyPathing"
@@ -39,24 +39,42 @@ tracks/0/keys = {
 
 [node name="Enemy" type="KinematicBody2D" groups=["target"]]
 position = Vector2( 848, 99 )
-scale = Vector2( 5, 5 )
 collision_layer = 2
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.90735e-07, -1.96695e-07 )
+position = Vector2( -0.5, 0.5 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
 
 [node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="PathingAnimation" type="AnimationPlayer" parent="."]
 autoplay = "EnemyPathing"
 anims/EnemyPathing = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
 [node name="DespawnTimer" type="Timer" parent="."]
 wait_time = 11.0
+
+[node name="DeathTween" type="Tween" parent="."]
+playback_speed = 0.4
+playback/speed = 0.4
+
+[node name="DeathParticles" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.4
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+scale_amount = 4.0
+color = Color( 0.764706, 0.101961, 0.101961, 1 )
+
+[node name="DeathAnimationTimer" type="Timer" parent="."]
+wait_time = 0.3
