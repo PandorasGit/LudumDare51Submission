@@ -3,18 +3,22 @@
 [ext_resource path="res://Bullets/SuperBullet/SuperBullet.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 8.00391
+radius = 40.0
 
 [node name="SuperBullet" type="KinematicBody2D"]
-scale = Vector2( 4, 4 )
 collision_layer = 8
 collision_mask = 2
 script = ExtResource( 1 )
 _direction_fired = Vector2( 0, -1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 5, 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="DespawnTimer" type="Timer" parent="."]
+
+[node name="Tween" type="Tween" parent="."]
+repeat = true
+playback/repeat = true
