@@ -19,6 +19,7 @@ onready var _texture := load("res://Bullets/DefaultBullet.png")
 onready var _despawn_timer := find_node("DespawnTimer")
 onready var _tween := find_node("Tween")
 
+
 func _ready() -> void:
 	_setup_tween()
 	_sprite.texture = _texture
@@ -41,10 +42,6 @@ func on_despawn_timer_timeout() -> void:
 	queue_free()
 
 
-func startTimer() -> void:
-	_tween.start()
-	_despawn_timer.start()
-
 func _setup_tween() -> void:
 	_tween.interpolate_property(_sprite, "modulate",
 		Color("fa9b08"), Color("ff0000"), 1,
@@ -52,5 +49,8 @@ func _setup_tween() -> void:
 	_tween.interpolate_property(_sprite, "scale",
 		Vector2(3, 4), Vector2(4, 4), 1,
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT )
-	
-	
+
+
+func startTimer() -> void:
+	_tween.start()
+	_despawn_timer.start()

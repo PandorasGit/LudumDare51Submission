@@ -63,5 +63,3 @@ input_pass_on_modal_close_click = false
 pressed = true
 align = 1
 icon_align = 1
-
-[connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]

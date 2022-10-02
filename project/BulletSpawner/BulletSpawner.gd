@@ -15,6 +15,7 @@ onready var _friendly_bullet := load("res://Bullets/FriendlyBullet/FriendlyBulle
 onready var _super_bullet := load("res://Bullets/SuperBullet/SuperBullet.tscn")
 onready var _shoot_sound := find_node("ShootSound")
 
+
 func _set_player(value: KinematicBody2D) -> void:
 	player = value
 	# warning-ignore:return_value_discarded

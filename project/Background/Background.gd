@@ -7,7 +7,7 @@ var _star_count := 40
 onready var _star := load("res://Background/Star/Star.tscn")
 
 
-func _ready():
+func _ready() -> void:
 	randomize()
 	for i in _star_count:
 		#Instances do not have set types so type cannot be inferred

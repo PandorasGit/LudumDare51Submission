@@ -16,6 +16,7 @@ onready var _death_particles := find_node("DeathParticles")
 onready var _death_timer := find_node("DeathAnimationTimer")
 onready var _death_sound := find_node("DeathSound")
 
+
 func _ready() -> void:
 	# warning-ignore:return_value_discarded
 	_reload_timer.connect("timeout", self, "_on_reload_timer_timeout")
@@ -47,7 +48,6 @@ func _on_despawn_timer_timeout() -> void:
 
 func _on_death_timer_timeout() -> void:
 	queue_free()
-
 
 
 func _die() -> void:

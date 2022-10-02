@@ -17,6 +17,8 @@ func _set_player(value: KinematicBody2D) -> void:
 	player = value
 	# warning-ignore:return_value_discarded
 	player.connect("super_state_changed", self, "_on_super_state_changed")
+	# warning-ignore:return_value_discarded
+	_restart_button.connect("pressed", self, "_on_RestartButton_pressed")
 
 
 func _set_bullet_spawner(value: Node2D) -> void:
@@ -33,6 +35,7 @@ func _on_score_updated(new_score: float) -> void:
 
 func _on_player_killed() -> void:
 	_restart_button.visible = true
+	_restart_button.grab_focus()
 
 
 func _on_super_state_changed(state: bool) -> void:

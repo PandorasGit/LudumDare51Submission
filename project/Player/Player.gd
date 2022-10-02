@@ -13,6 +13,7 @@ var _has_fired := false
 var _has_supered := false
 var _is_alive := true
 
+
 onready var _reload_timer := find_node("ReloadTimer")
 onready var _super_timer := find_node("SuperTimer")
 onready var _collider := find_node("Collider")
@@ -21,6 +22,7 @@ onready var _sprite := find_node("Sprite")
 onready var _death_particles := find_node("DeathParticles")
 onready var _death_timer := find_node("DeathAnimationTimer")
 onready var _death_sound := find_node("DeathSound")
+
 
 func _ready() -> void:
 	# warning-ignore:return_value_discarded
@@ -52,7 +54,7 @@ func _shoot_normal() -> void:
 	_reload_timer.start()
 
 
-func _shoot_super():
+func _shoot_super() -> void:
 	emit_signal("fired", _super_bullet_id, position)
 	_has_supered = true
 	emit_signal("super_state_changed", false)
@@ -77,8 +79,10 @@ func _on_killed() -> void:
 	_die()
 	_death_timer.start()
 
+
 func _on_death_timer_timeout() -> void:
 	queue_free()
+
 
 func _die() -> void:
 	_death_sound.play()
