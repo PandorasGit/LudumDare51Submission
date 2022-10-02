@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Background/Background.tscn" type="PackedScene" id=2]
@@ -9,6 +9,37 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "TitleScreenAnimation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -36,3 +67,8 @@ margin_right = -440.0
 margin_bottom = -342.0
 custom_fonts/font = SubResource( 2 )
 text = "Start Game"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "TitleScreenAnimation"
+anims/RESET = SubResource( 3 )
+anims/TitleScreenAnimation = SubResource( 4 )
