@@ -63,3 +63,4 @@ hue_variation_curve = SubResource( 3 )
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -5.0
