@@ -10,6 +10,14 @@
 - A super attack can be fired every 10 seconds using the same button
 - Enemies will exist on screen for a total of ten seconds. Every Ten Seconds, they one will have had the chance to complete its animation cycle.
 
+
+## Third Party Assets
+***
+Only permited for compo third part assets were used such as fonts.
+
+- [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P?query=8&preview.text=My%20dick%20hurt&preview.text_type=custom) from Google fonts licensed under [OFL](licenses/OFL.txt).
+
+
 # Goals For the Jam
 
 - [X] Movement
@@ -29,7 +37,7 @@
 - [X] Juice as a decorated back grounds
 - [X] Juice as in player death effect
 - [X] Juice as in enemy death effect
-- [ ] Juice as a font for HUD and title screen
+- [X] Juice as a font for HUD and title screen
 - [X] Sound effects
 - [ ] Music
 - [X] Juice as particle effects
