@@ -4,7 +4,7 @@
 ## Ludum Dare Game
 - My Jam Game for Ludum Dare 51
 - Made using Godot 3.5.1, Sfxr, LMMS, Piskel, and Paint.net
-- Play the latest build [here](https://wendallr.github.io/LudumDare51Submission/)
+- Play the latest build [here](https://pandorasgit.github.io/LudumDare51Submission/)
 - View the [Ludum Dare page](https://ldjam.com/events/ludum-dare/51/ten-second-gunner)
 
 ## Features and Controls
